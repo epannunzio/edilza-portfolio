@@ -1,0 +1,54 @@
+"use client";
+
+import { experience } from "@/data/experience";
+import { useLanguage } from "./LanguageProvider";
+
+export default function Experience() {
+  const { t } = useLanguage();
+  return (
+    <section
+      id="experience"
+      className="border-t border-[color:var(--border)] dark:border-[color:var(--border)] px-6 py-24 lg:px-8 lg:py-32"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-16">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-[color:var(--accent)]">{t('experience_label')}</p>
+
+          <h2 className="mt-4 text-3xl font-medium tracking-tight md:text-5xl">{t('experience_title')}</h2>
+        </div>
+
+        <div className="border-t border-[color:var(--border)] dark:border-[color:var(--border)]">
+          {experience.map((item) => (
+            <article
+              key={`${item.company}-${item.period}`}
+              className="grid gap-8 border-b border-[color:var(--border)] dark:border-[color:var(--border)] py-10 md:grid-cols-[180px_1fr_220px]"
+            >
+              <p className="text-sm text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{item.period}</p>
+
+              <div>
+                <h3 className="text-xl font-medium">{item.role}</h3>
+
+                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{item.company}</p>
+
+                <p className="mt-6 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
+                  {item.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap content-start gap-2">
+                {item.technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="rounded-full border border-[color:var(--border)] dark:border-[color:var(--border)] px-3 py-1.5 text-xs text-[#5B5BF7]"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
