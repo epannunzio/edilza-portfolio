@@ -7,6 +7,7 @@ import { projects } from "@/data/projects";
 import { useLanguage } from "./LanguageProvider";
 
 function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
+  const { t } = useLanguage();
   const isMistral = project.title.toLowerCase().includes("mistral");
 
   return (
