@@ -4,7 +4,7 @@ import { experience } from "@/data/experience";
 import { useLanguage } from "./LanguageProvider";
 
 export default function Experience() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   return (
     <section
       id="experience"
@@ -26,12 +26,12 @@ export default function Experience() {
               <p className="text-sm text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{item.period}</p>
 
               <div>
-                <h3 className="text-xl font-medium">{item.role}</h3>
+                <h3 className="text-xl font-medium">{typeof item.role === 'string' ? item.role : item.role[lang]}</h3>
 
-                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{item.company}</p>
+                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{typeof item.company === 'string' ? item.company : item.company[lang]}</p>
 
                 <p className="mt-6 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
-                  {item.description}
+                  {typeof item.description === 'string' ? item.description : item.description[lang]}
                 </p>
               </div>
 

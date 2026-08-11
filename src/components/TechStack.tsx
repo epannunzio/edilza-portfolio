@@ -2,19 +2,19 @@
 
 const categories = [
   {
-    title: "Frontend",
+    titleKey: "tech_frontend",
     technologies: ["React", "Next.js", "TypeScript", "JavaScript"],
   },
   {
-    title: "Styling",
+    titleKey: "tech_styling",
     technologies: ["Tailwind CSS", "CSS", "HTML"],
   },
   {
-    title: "Tools",
+    titleKey: "tech_tools",
     technologies: ["Git", "GitHub", "Figma", "Vercel"],
   },
   {
-    title: "Currently exploring",
+    titleKey: "tech_currently_exploring",
     technologies: ["Testing", "Accessibility", "Performance"],
   },
 ];
@@ -39,8 +39,8 @@ export default function TechStack() {
 
           <div className="grid gap-10 sm:grid-cols-2">
             {categories.map((category) => (
-              <div key={category.title}>
-                <h3 className="text-sm font-medium">{category.title}</h3>
+              <div key={category.titleKey}>
+                <h3 className="text-sm font-medium">{t(category.titleKey)}</h3>
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   {category.technologies.map((technology) => (

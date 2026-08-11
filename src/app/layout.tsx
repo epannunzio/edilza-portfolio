@@ -10,14 +10,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Edilza Pannunzio — Front-end Developer",
+  title: "Edilza Pannunzio — Desenvolvedora Front-end",
   description:
-    "Front-end Developer specializing in React, Next.js and TypeScript.",
+    "Desenvolvedora Front-end especializada em React, Next.js e TypeScript.",
   authors: [{ name: "Edilza Pannunzio" }],
   openGraph: {
-    title: "Edilza Pannunzio — Front-end Developer",
+    title: "Edilza Pannunzio — Desenvolvedora Front-end",
     description:
-      "Front-end Developer specializing in React, Next.js and TypeScript.",
+      "Desenvolvedora Front-end especializada em React, Next.js e TypeScript.",
     type: "website",
   },
 };
@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={`${inter.variable} site-noise antialiased`}>
         <LanguageProvider>
           {children}

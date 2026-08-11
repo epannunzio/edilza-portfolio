@@ -43,7 +43,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="display max-w-300 font-semibold"
+            className="display max-w-full break-words whitespace-normal font-semibold"
           >
             {lang === "pt" ? (
               <>
@@ -80,7 +80,7 @@ export default function Hero() {
         <div className="flex items-end justify-between border-t border-[color:var(--border)]/70 dark:border-[color:var(--border)] pt-5">
           <div className="flex items-center gap-2 text-xs text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
             <MapPin size={13} />
-            São Paulo, Brazil
+            {t('hero_location')}
           </div>
         </div>
       </div>

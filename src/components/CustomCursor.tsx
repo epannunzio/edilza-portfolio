@@ -92,12 +92,12 @@ export default function CustomCursor() {
     <>
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed left-0 top-0 z-200 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--foreground)]"
+        className="pointer-events-none fixed left-0 top-0 z-200 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--foreground)"
       />
 
       <div
         ref={followerRef}
-        className="pointer-events-none fixed left-0 top-0 z-199 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-[var(--foreground)] opacity-40 transition-[width,height,background-color,opacity] duration-300"
+        className="pointer-events-none fixed left-0 top-0 z-199 h-8 w-8 -translate-x-1/2 -translate-y-1/2 rounded-full border border-(--foreground) opacity-40 transition-[width,height,background-color,opacity] duration-300"
       />
 
       <style jsx global>{`
@@ -105,7 +105,7 @@ export default function CustomCursor() {
           width: 52px;
           height: 52px;
           opacity: 0.9;
-          background: var(--foreground);
+          background: var(--border);
         }
       `}</style>
     </>

@@ -7,8 +7,9 @@ import { projects } from "@/data/projects";
 import { useLanguage } from "./LanguageProvider";
 
 function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
-  const { t } = useLanguage();
-  const isMistral = project.title.toLowerCase().includes("mistral");
+  const { t, lang } = useLanguage();
+  const titleText = typeof project.title === "string" ? project.title : project.title[lang];
+  const isMistral = titleText.toLowerCase().includes("mistral");
 
   return (
     <div className="group relative aspect-12/7 overflow-hidden rounded-3xl bg-neutral-200 dark:bg-neutral-900 sm:aspect-16/10">
@@ -21,7 +22,7 @@ function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
         {project.image ? (
           <Image
             src={project.image}
-            alt={project.title}
+            alt={titleText}
             fill
             className={`transition-transform duration-700 will-change-transform ${isMistral ? "object-contain object-center bg-black/5 dark:bg-[color:var(--foreground)]/5" : "object-contain object-center"}`}
             priority={project.featured}
@@ -32,12 +33,12 @@ function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
           <div className="flex h-full items-center justify-center bg-neutral-200 dark:bg-neutral-900 px-6 text-center">
             <div>
               <div className="text-[clamp(2rem,5vw,5rem)] font-semibold tracking-[-0.06em] text-neutral-300">
-                  {project.title}
-                  <span className="text-[#5B5BF7]">.</span>
-                </div>
-                <div className="mt-2 text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-400">
-                  {t('live_project')}
-                </div>
+                {titleText}
+                <span className="text-[#5B5BF7]">.</span>
+              </div>
+              <div className="mt-2 text-xs uppercase tracking-[0.2em] text-neutral-400 dark:text-neutral-400">
+                {t("live_project")}
+              </div>
             </div>
           </div>
         )}
@@ -45,7 +46,7 @@ function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
 
       <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-      <div className="absolute left-0 right-0 top-0 z-10 flex h-10 items-center gap-1.5 border-b border-black/5 bg-white/80 px-4 backdrop-blur-md dark:border-[color:var(--foreground)]/10 dark:bg-[color:var(--background)]/70">
+      <div className="absolute left-0 right-0 top-0 z-10 flex h-10 items-center gap-1.5 border-b border-black/5 bg-white/80 px-4 backdrop-blur-md dark:border-(--foreground)/10 dark:bg-(--background)/70">
         <span className="h-2 w-2 rounded-full bg-neutral-300" />
         <span className="h-2 w-2 rounded-full bg-neutral-300" />
         <span className="h-2 w-2 rounded-full bg-neutral-300" />
@@ -56,7 +57,7 @@ function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
 }
 
 export default function Projects() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const featuredProject = projects.find((project) => project.featured);
   const secondaryProjects = projects.filter((project) => !project.featured);
 
@@ -67,7 +68,7 @@ export default function Projects() {
   return (
       <section
       id="work"
-      className="border-t border-[color:var(--border)] dark:border-[color:var(--border)] px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-40"
+      className="border-t border-(--border) dark:border-(--border) px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-40"
     >
       <div className="mx-auto max-w-7xl">
         {/* Header */}
@@ -105,23 +106,23 @@ export default function Projects() {
             <ProjectPreview project={featuredProject} />
 
             <div className="mt-7 grid gap-6 md:grid-cols-[80px_1fr_auto] md:items-start">
-              <div className="text-sm text-[color:var(--subtle)]">
+              <div className="text-sm text-(--subtle)">
                 {featuredProject.number}
               </div>
 
-              <div>
+                  <div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-3xl font-medium tracking-tight text-[color:var(--foreground)] dark:text-[color:var(--foreground)]">
-                    {featuredProject.title}
+                  <h3 className="text-3xl font-medium tracking-tight text-(--foreground) dark:text-(--foreground)">
+                    {typeof featuredProject.title === 'string' ? featuredProject.title : featuredProject.title[lang]}
                   </h3>
 
-                  <span className="rounded-full bg-[color:var(--accent-light)] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-[color:var(--accent)]">
-                    {t('featured_professional')}
+                  <span className="rounded-full bg-(--accent-light) px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-[color:var(--accent)]">
+                    {featuredProject.professional ? t('featured_professional') : t('featured_personal')}
                   </span>
                 </div>
 
                 <p className="mt-3 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
-                  {featuredProject.description}
+                  {typeof featuredProject.description === 'string' ? featuredProject.description : featuredProject.description[lang]}
                 </p>
 
                 <div className="mt-5 flex flex-wrap gap-2">
@@ -172,13 +173,21 @@ export default function Projects() {
                   <div className="mt-6">
                     <div className="flex items-center justify-between">
                       <div>
-                        <span className="text-xs text-neutral-400 dark:text-neutral-400">
-                          {project.number}
-                        </span>
+                        <div>
+                          <span className="text-xs text-neutral-400 dark:text-neutral-400">
+                            {project.number}
+                          </span>
 
-                        <h3 className="mt-2 text-2xl font-medium tracking-tight text-[color:var(--foreground)] dark:text-[color:var(--foreground)]">
-                          {project.title}
-                        </h3>
+                          <div className="mt-2 flex items-center gap-3">
+                            <h3 className="text-2xl font-medium tracking-tight text-[color:var(--foreground)] dark:text-[color:var(--foreground)]">
+                              {typeof project.title === 'string' ? project.title : project.title[lang]}
+                            </h3>
+
+                            <span className="rounded-full bg-[color:var(--accent-light)] px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-[color:var(--accent)]">
+                              {project.professional ? t('featured_professional') : t('featured_personal')}
+                            </span>
+                          </div>
+                        </div>
                       </div>
 
                       <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border)] dark:border-[color:var(--border)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-black dark:group-hover:border-[color:var(--foreground)]">
@@ -187,7 +196,7 @@ export default function Projects() {
                     </div>
 
                     <p className="mt-3 max-w-lg text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
-                      {project.description}
+                      {typeof project.description === 'string' ? project.description : project.description[lang]}
                     </p>
 
                     <div className="mt-5 flex flex-wrap gap-2">
