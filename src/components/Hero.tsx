@@ -31,10 +31,10 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-8 flex items-center gap-3">
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[color:var(--accent)] opacity-50" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[color:var(--accent)]" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-(--accent)" />
             </span>
 
-            <span className="text-xs font-medium uppercase tracking-[0.18em] text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
+            <span className="text-xs font-medium uppercase tracking-[0.18em] text-(--muted) dark:text-(--subtle)">
               {t("hero_available")}
             </span>
           </motion.div>
@@ -43,7 +43,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="display max-w-full break-words whitespace-normal font-semibold"
+            className="display max-w-full wrap-break-word whitespace-normal text-[clamp(2.75rem,11vw,9rem)] font-semibold"
           >
             {lang === "pt" ? (
               <>
