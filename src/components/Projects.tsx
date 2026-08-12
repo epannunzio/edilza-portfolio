@@ -101,44 +101,60 @@ export default function Projects() {
             href={featuredProject.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block"
+            className="grid gap-10 md:grid-cols-[minmax(0,1.7fr)_minmax(280px,0.8fr)] md:items-center lg:gap-14"
           >
-            <ProjectPreview project={featuredProject} />
+            {/* Mistral image */}
+            <div className="w-full">
+              <ProjectPreview project={featuredProject} />
+            </div>
 
-            <div className="mt-7 grid gap-6 md:grid-cols-[80px_1fr_auto] md:items-start">
-              <div className="text-sm text-(--subtle)">
+            {/* Mistral information */}
+            <div className="flex flex-col">
+              {/* Number */}
+              <span className="text-sm text-(--subtle)">
                 {featuredProject.number}
-              </div>
+              </span>
 
-                  <div>
+              {/* Title + professional badge */}
+              <div className="mt-5">
                 <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-3xl font-medium tracking-tight text-(--foreground) dark:text-(--foreground)">
-                    {typeof featuredProject.title === 'string' ? featuredProject.title : featuredProject.title[lang]}
+                  <h3 className="text-3xl font-medium tracking-tight text-(--foreground) lg:text-4xl">
+                    {typeof featuredProject.title === "string"
+                      ? featuredProject.title
+                      : featuredProject.title[lang]}
                   </h3>
 
                   <span className="rounded-full bg-(--accent-light) px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-[color:var(--accent)]">
-                    {featuredProject.professional ? t('featured_professional') : t('featured_personal')}
+                    {featuredProject.professional
+                      ? t("featured_professional")
+                      : t("featured_personal")}
                   </span>
-                </div>
-
-                <p className="mt-3 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
-                  {typeof featuredProject.description === 'string' ? featuredProject.description : featuredProject.description[lang]}
-                </p>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {featuredProject.technologies.map((technology) => (
-                    <span
-                        key={technology}
-                        className="rounded-full border border-[color:var(--border)] dark:border-[color:var(--border)] px-3 py-1.5 text-xs text-[#5B5BF7]"
-                      >
-                      {technology}
-                    </span>
-                  ))}
                 </div>
               </div>
 
-              <div className="flex items-center gap-2 text-sm font-medium">
-                {t('visit_project')}
+              {/* Description */}
+              <p className="mt-6 max-w-md text-sm leading-7 text-(--muted) dark:text-(--subtle)">
+                {typeof featuredProject.description === "string"
+                  ? featuredProject.description
+                  : featuredProject.description[lang]}
+              </p>
+
+              {/* Technologies */}
+              <div className="mt-7 flex flex-wrap gap-2">
+                {featuredProject.technologies.map((technology) => (
+                  <span
+                    key={technology}
+                    className="rounded-full border border-(--border) px-3 py-1.5 text-xs text-[#5B5BF7]"
+                  >
+                    {technology}
+                  </span>
+                ))}
+              </div>
+
+              {/* Visit project */}
+              <div className="mt-9 flex items-center gap-2 text-sm font-medium">
+                {t("visit_project")}
+
                 <ArrowUpRight
                   size={17}
                   className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"

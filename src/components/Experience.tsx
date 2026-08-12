@@ -18,17 +18,21 @@ export default function Experience() {
         </div>
 
         <div className="border-t border-[color:var(--border)] dark:border-[color:var(--border)]">
-          {experience.map((item) => (
-            <article
-              key={`${item.company}-${item.period}`}
-              className="grid gap-8 border-b border-[color:var(--border)] dark:border-[color:var(--border)] py-10 md:grid-cols-[180px_1fr_220px]"
-            >
-              <p className="text-sm text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{item.period}</p>
+          {experience.map((item) => {
+            const companyText = typeof item.company === 'string' ? item.company : item.company[lang];
+            const periodText = typeof item.period === 'string' ? item.period : item.period[lang];
 
-              <div>
+            return (
+              <article
+                key={`${companyText}-${periodText}`}
+                className="grid gap-8 border-b border-[color:var(--border)] dark:border-[color:var(--border)] py-10 md:grid-cols-[180px_1fr_220px]"
+              >
+                <p className="text-sm text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{periodText}</p>
+
+                <div>
                 <h3 className="text-xl font-medium">{typeof item.role === 'string' ? item.role : item.role[lang]}</h3>
 
-                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{typeof item.company === 'string' ? item.company : item.company[lang]}</p>
+                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{companyText}</p>
 
                 <p className="mt-6 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
                   {typeof item.description === 'string' ? item.description : item.description[lang]}
@@ -39,16 +43,16 @@ export default function Experience() {
                 {item.technologies.map((technology) => (
                   <span
                     key={technology}
-                    className="rounded-full border border-[color:var(--border)] dark:border-[color:var(--border)] px-3 py-1.5 text-xs text-[#5B5BF7]"
+                    className="rounded-full border border-(--border) dark:border-(--border) px-3 py-1.5 text-xs text-[#5B5BF7]"
                   >
                     {technology}
                   </span>
                 ))}
               </div>
             </article>
-          ))}
+          )})}
         </div>
       </div>
     </section>
-  );
+  )
 }
