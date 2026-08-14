@@ -150,15 +150,26 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-
+              <div className="flex justify-around">
               {/* Visit project */}
-              <div className="mt-9 flex items-center gap-2 text-sm font-medium">
-                {t("visit_project")}
+                <div className="mt-9 flex items-center gap-2 text-sm font-medium">
+                  {t("visit_project")}
 
-                <ArrowUpRight
-                  size={17}
-                  className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                />
+                  <ArrowUpRight
+                    size={17}
+                    className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
+                </div>
+
+                {/* Study Case */}
+                <div className="mt-9 flex items-center gap-2 text-sm font-medium">
+                  {t("study_case")}
+
+                  <ArrowUpRight
+                    size={17}
+                    className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+                  />
+                </div>
               </div>
             </div>
           </a>
