@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { projects } from "@/data/projects";
 import { useLanguage } from "./LanguageProvider";
+import Link from "next/link";
 
 function ProjectPreview({ project }: { project: (typeof projects)[number] }) {
   const { t, lang } = useLanguage();
@@ -150,7 +151,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              <div className="flex justify-around">
+              <div className="flex">
               {/* Visit project */}
                 <div className="mt-9 flex items-center gap-2 text-sm font-medium">
                   {t("visit_project")}
@@ -160,20 +161,22 @@ export default function Projects() {
                     className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
                   />
                 </div>
-
-                {/* Study Case */}
-                <div className="mt-9 flex items-center gap-2 text-sm font-medium">
-                  {t("study_case")}
-
-                  <ArrowUpRight
-                    size={17}
-                    className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-                  />
-                </div>
               </div>
             </div>
           </a>
-        </motion.article>
+          {/* Study Case */}
+            <Link
+              href="/projects/mistral"
+              className="mt-9 flex items-center gap-2 text-sm font-medium"
+            >
+              {t("study_case")}
+
+            <ArrowUpRight
+              size={17}
+              className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+            />
+            </Link> 
+      </motion.article>
 
         {/* Secondary projects */}
         <div className="mt-28 grid gap-x-8 gap-y-20 sm:grid-cols-1 md:grid-cols-2">

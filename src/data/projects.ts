@@ -21,7 +21,7 @@ export const projects: Project[] = [
       pt: "Uma experiência completa de e-commerce para uma das principais importadoras de vinhos do Brasil. Contribuí desde o desenvolvimento inicial, ajudando a construir e refinar a experiência digital.",
     },
     technologies: ["React", "Next.js", "TypeScript"],
-    url: "/projects/mistral",
+    url: "https://mistral.com.br",
     image: "/projects/mistral.webp",
     featured: true,
     professional: true,
