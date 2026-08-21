@@ -21,8 +21,8 @@ export default function MistralCaseStudy() {
         ? "Desenvolvimento do zero"
         : "Development from scratch",
       description: isPortuguese
-        ? "Participação no desenvolvimento da plataforma desde o início, utilizando o Figma fornecido pelo cliente como base para transformar os layouts em uma experiência web funcional e responsiva."
-        : "Contributed to the development of the platform from the ground up, using the Figma provided by the client as the foundation for a functional and responsive web experience.",
+        ? "Participação no desenvolvimento da plataforma desde o início, utilizando Next.js juntamente com bibliotecas atuais como ShadCN para transformar os layouts em uma experiência web funcional e responsiva."
+        : "Contributed to the development of the platform from the ground up, using Next.js with others moderns librarys like ShadCN for a functional and responsive web experience.",
     },
     {
       number: "02",
@@ -113,7 +113,7 @@ export default function MistralCaseStudy() {
             <div>
               <div className="mb-7 flex flex-wrap items-center gap-3">
                 <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-                  01 / Client project
+                  {isPortuguese ? "01 / Projeto do cliente" : "01 / Client project"}
                 </span>
 
                 <span className="rounded-full bg-(--accent-light) px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-(--accent)">
@@ -144,15 +144,15 @@ export default function MistralCaseStudy() {
                 className="mt-8 max-w-2xl text-base leading-8 text-(--muted) sm:text-lg"
               >
                 {isPortuguese
-                  ? "Desenvolvimento de uma experiência digital completa para a Mistral, construída a partir do zero com base no design fornecido pelo cliente."
-                  : "Development of a complete digital experience for Mistral, built from the ground up based on the design provided by the client."}
+                  ? "Desenvolvimento de uma experiência digital e-commerce completa para a Mistral Importadora de vinhos, construída a partir do zero com base no design fornecido pelo cliente."
+                  : "Development of a complete digital e-commerce experience for Mistral, built from the ground up based on the design provided by the client."}
               </motion.p>
             </div>
 
             <div className="border-t border-(--border) pt-6 lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0">
               <div>
                 <span className="text-[10px] uppercase tracking-[0.2em] text-(--subtle)">
-                  Role
+                  {isPortuguese ? "Função" : "Role"}
                 </span>
 
                 <p className="mt-2 text-base font-medium">
@@ -162,7 +162,7 @@ export default function MistralCaseStudy() {
 
               <div className="mt-7">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-(--subtle)">
-                  Company
+                  {isPortuguese ? "Empresa" : "Company"}
                 </span>
 
                 <p className="mt-2 text-base font-medium">
@@ -172,7 +172,7 @@ export default function MistralCaseStudy() {
 
               <div className="mt-7">
                 <span className="text-[10px] uppercase tracking-[0.2em] text-(--subtle)">
-                  Type
+                  {isPortuguese ? "Tipo" : "Type"}
                 </span>
 
                 <p className="mt-2 text-base font-medium">
@@ -219,7 +219,7 @@ export default function MistralCaseStudy() {
         <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-[0.65fr_1.35fr] lg:gap-24">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-              02 / Overview
+              {isPortuguese ? "02 / Visão geral" : "02 / Overview"}
             </span>
 
             <h2 className="mt-5 max-w-md text-3xl font-medium tracking-tight sm:text-4xl lg:text-5xl">
@@ -238,7 +238,7 @@ export default function MistralCaseStudy() {
 
             <p className="mt-6">
               {isPortuguese
-                ? "Minha atuação envolveu diferentes partes da experiência, desde a criação da maioria das landing pages até funcionalidades da área logada e etapas importantes do fluxo de compra."
+                ? "Minha atuação envolveu diferentes partes da experiência, desde a criação das landing pages até funcionalidades da área logada e etapas importantes do fluxo de compra."
                 : "My contribution covered different parts of the experience, from developing most of the landing pages to authenticated features and important steps of the purchasing flow."}
             </p>
           </div>
@@ -253,7 +253,7 @@ export default function MistralCaseStudy() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 max-w-3xl">
             <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-              03 / My contribution
+              {isPortuguese ? "03 / Minha contribuição" : "03 / My contribution"}
             </span>
 
             <h2 className="mt-5 text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
@@ -298,7 +298,7 @@ export default function MistralCaseStudy() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-14 max-w-3xl">
             <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-              04 / Selected screens
+              {isPortuguese ? "04 / Telas selecionadas" : "04 / Selected screens"}
             </span>
 
             <h2 className="mt-5 text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">
@@ -370,7 +370,7 @@ export default function MistralCaseStudy() {
         <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.7fr_1.3fr] md:items-start">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-              05 / Technologies
+              {isPortuguese ? "05 / Tecnologias" : "05 / Technologies"}
             </span>
 
             <h2 className="mt-5 text-3xl font-medium tracking-tight sm:text-4xl">
@@ -409,7 +409,7 @@ export default function MistralCaseStudy() {
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-10 md:flex-row md:items-end">
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-(--accent)">
-              06 / Visit project
+              {isPortuguese ? "06 / Visitar projeto" : "06 / Visit project"}
             </span>
 
             <h2 className="mt-5 text-4xl font-medium tracking-tight sm:text-5xl lg:text-6xl">

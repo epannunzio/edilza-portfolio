@@ -25,16 +25,16 @@ export default function Experience() {
             return (
               <article
                 key={`${companyText}-${periodText}`}
-                className="grid gap-8 border-b border-[color:var(--border)] dark:border-[color:var(--border)] py-10 md:grid-cols-[180px_1fr_220px]"
+                className="grid gap-8 border-b border-(--border) dark:border-(--border) py-10 md:grid-cols-[180px_1fr_220px]"
               >
-                <p className="text-sm text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{periodText}</p>
+                <p className="text-sm text-(--muted) dark:text-(--subtle)">{periodText}</p>
 
                 <div>
                 <h3 className="text-xl font-medium">{typeof item.role === 'string' ? item.role : item.role[lang]}</h3>
 
-                <p className="mt-1 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">{companyText}</p>
+                <p className="mt-1 text-(--muted) dark:text-(--subtle)">{companyText}</p>
 
-                <p className="mt-6 max-w-2xl text-sm leading-6 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
+                <p className="mt-6 max-w-2xl text-sm leading-6 text-(--muted) dark:text-(--subtle)">
                   {typeof item.description === 'string' ? item.description : item.description[lang]}
                 </p>
               </div>
