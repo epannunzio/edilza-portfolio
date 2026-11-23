@@ -7,6 +7,7 @@ type Lang = "en" | "pt";
 const translations: Record<Lang, Record<string, string>> = {
   en: {
     nav_about: "About",
+    nav_certificates: "Certificates",
     nav_experience: "Experience",
     nav_work: "Work",
     nav_contact: "Contact",
@@ -24,6 +25,16 @@ const translations: Record<Lang, Record<string, string>> = {
     hero_paragraph:
       "I build modern digital experiences where thoughtful design, clean code and technology come together.",
     hero_explore: "Explore my work",
+    certificates_label: "03 / Certificates",
+    certificates_subtitle: "Learning in motion",
+    certificates_title: "Always learning,",
+    certificates_title_suffix: "always building.",
+    certificates_description:
+      "A collection of courses and certifications that have shaped my journey in front-end development and design.",
+    certificates_previous: "Previous certificate",
+    certificates_next: "Next certificate",
+    certificates_view: "Open certificate",
+    certificates_count: "certificates",
       about_label: "02 / About",
       about_subtitle: "A little bit about me",
       about_title_prefix: "I turn complex problems into",
@@ -31,7 +42,7 @@ const translations: Record<Lang, Record<string, string>> = {
       about_p1: "I'm a Front-end Developer with experience building modern web applications since 2021. I'm passionate about the intersection between design and technology.",
       about_p2: "I care about writing clean, maintainable code while making sure the final product is accessible, performant and genuinely useful.",
       explore_github: "Explore GitHub",
-    projects_selected: "03 / Selected work",
+    projects_selected: "04 / Selected work",
     projects_title_prefix: "Projects that",
     projects_title_suffix: " tell the story.",
     projects_description:
@@ -59,6 +70,7 @@ const translations: Record<Lang, Record<string, string>> = {
   },
   pt: {
     nav_about: "Sobre",
+    nav_certificates: "Certificados",
     nav_experience: "Experiência",
     nav_work: "Projetos",
     nav_contact: "Contato",
@@ -72,6 +84,16 @@ const translations: Record<Lang, Record<string, string>> = {
     hero_paragraph:
       "Construo experiências digitais modernas onde design cuidadoso, código limpo e tecnologia se encontram.",
     hero_explore: "Veja meus trabalhos",
+    certificates_label: "03 / Certificados",
+    certificates_subtitle: "Aprendizado em movimento",
+    certificates_title: "Sempre aprendendo,",
+    certificates_title_suffix: "sempre construindo.",
+    certificates_description:
+      "Uma coleção de cursos e certificações que fizeram parte da minha trajetória em desenvolvimento front-end e design.",
+    certificates_previous: "Certificado anterior",
+    certificates_next: "Próximo certificado",
+    certificates_view: "Abrir certificado",
+    certificates_count: "certificados",
       about_label: "02 / Sobre",
       about_subtitle: "Um pouco sobre mim",
       about_title_prefix: "Eu transformo problemas complexos em",
@@ -79,7 +101,7 @@ const translations: Record<Lang, Record<string, string>> = {
       about_p1: "Sou desenvolvedora Front-end com experiência em construir aplicações web modernas desde 2021. Sou apaixonada pela interseção entre design e tecnologia.",
       about_p2: "Prezo por escrever código limpo e de fácil manutenção, garantindo que o produto final seja acessível, performático e verdadeiramente útil.",
       explore_github: "Explore o GitHub",
-    projects_selected: "03 / Trabalhos selecionados",
+    projects_selected: "04 / Trabalhos selecionados",
     projects_title_prefix: "Projetos que",
     projects_title_suffix: " contam a história.",
     projects_description:

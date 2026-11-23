@@ -35,10 +35,10 @@ export default function About() {
             </p>
           </div>
 
-          <div className="flex items-start gap-4">
+          <div className="flex min-h-[260px] items-start gap-4">
             <span className="mt-1 text-xs text-[color:var(--accent)]">02</span>
 
-            <div>
+            <div className="flex flex-1 flex-col self-stretch">
               <p className="max-w-md text-sm leading-7 text-[color:var(--muted)] dark:text-[color:var(--subtle)]">
                 {t('about_p2')}
               </p>
@@ -47,7 +47,7 @@ export default function About() {
                 href="https://github.com/epannunzio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group mt-8 inline-flex items-center gap-2 border-b border-[color:var(--border)] pb-1 text-sm font-medium text-[color:var(--foreground)] transition hover:text-[color:var(--foreground)] dark:border-[color:var(--border)] dark:text-[color:var(--subtle)] dark:hover:text-[color:var(--foreground)]"
+                className="group mt-auto inline-flex items-center gap-2 border-b border-[color:var(--border)] pt-14 pb-1 text-sm font-medium text-[color:var(--foreground)] transition hover:text-[color:var(--foreground)] dark:border-[color:var(--border)] dark:text-[color:var(--subtle)] dark:hover:text-[color:var(--foreground)]"
               >
                 {t('explore_github')}
                 <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
